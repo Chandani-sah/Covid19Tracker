@@ -1,21 +1,19 @@
-import React from 'react';
+import React from "react";
 
-//import Cards from './components/Cards/Cards';
-//import Chart from './components/Cards/Chart';
-//import CountryPicker from './components/CountryPicker/CountryPicker';
+import IndiaMap from "./components/IndiaMap/IndiaMap";
 
-import {Cards, Chart, CountryPicker} from './components';
-import styles from './App.module.css';
-import { fetchData } from './api';
+import { Cards, Chart, StatePicker } from "./components";
+import styles from "./App.module.css";
+import { fetchData } from "./api";
 
-import coronaImage from './images/image.png';
+import coronaImage from "./images/image.png";
+import FlagImage from "./images/FlagImage.gif";
 
 class App extends React.Component {
-
   state = {
     data: {},
-    country: '',
-  }
+    states: "",
+  };
 
   async componentDidMount() {
     const fetchedData = await fetchData();
@@ -23,24 +21,30 @@ class App extends React.Component {
     this.setState({ data: fetchedData });
   }
 
-  handleCountryChange = async (country) => {
-    const fetchedData = await fetchData(country);
-        
-    this.setState({data: fetchedData, country: country});
-  }
+  handleStateChange = async (states) => {
+    const fetchedData = await fetchData(states);
+
+    this.setState({ data: fetchedData, states: states });
+  };
 
   render() {
-
-    const { data, country } = this.state;
+    const { data, states } = this.state;
+    console.log(data);
 
     return (
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt="COVID-19" />
-        <Cards data = {data} />
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} />
+        <img className={styles.flagimage} src={FlagImage} alt="India" /> <br />
+        <br />
+        <br />
+        <Cards data={data} />
+        <br />
+        <br />
+        <StatePicker handleStateChange={this.handleStateChange} />
+        <IndiaMap data={states ? data : null} />
+        <Chart data={data} states={states} />
       </div>
-    )
+    );
   }
 }
 

@@ -1,0 +1,21 @@
+svg {
+  display: block;
+  width: 800px;
+}
+
+/* .IndiaMap {
+    font-family: sans-serif;
+    text-align: center;
+  }*/
+
+/* .map {
+  display: block;
+  height: 50px;
+} */
+
+@media (max-width: 770px) {
+  svg {
+    display: block;
+    width: 400px;
+  }
+}
