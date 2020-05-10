@@ -1,5 +1,5 @@
 {
-  "name": "covid19_tracker",
+  "name": "covid19_india",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,12 @@
     "react-chartjs-2": "^2.9.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-simple-maps": "^2.0.0",
+    "react-tooltip": "^4.2.6"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
