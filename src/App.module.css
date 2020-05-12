@@ -15,9 +15,9 @@ body {
 }
 
 .flagimage {
-  width: 72px;
-  margin-top: -105px;
-  margin-right: 243px;
+  width: 110px;
+  margin-top: -120px;
+  margin-left: 480px;
 }
 
 @media (max-width: 770px) {
@@ -31,9 +31,8 @@ body {
   }
 
   .flagimage {
-    width: 15%;
+    width: 20%;
     margin-top: -21%;
-    margin-left: 22%;
-    margin-right: 85%;
+    margin-left: 70%;
   }
 }
