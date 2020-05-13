@@ -35,13 +35,12 @@ class App extends React.Component {
         <img className={styles.image} src={coronaImage} alt="COVID-19" />
         <img className={styles.flagimage} src={FlagImage} alt="India" /> <br />
         <br />
-        <br />
-        <Cards data={data} />
-        <br />
-        <br />
-        <StatePicker handleStateChange={this.handleStateChange} />
-        <IndiaMap data={states ? data : null} />
-        <Chart data={data} states={states} />
+        <div>
+          <Cards data={data} />
+          <StatePicker handleStateChange={this.handleStateChange} />
+          <IndiaMap data={states ? data : null} />
+          <Chart data={data} states={states} />
+        </div>
       </div>
     );
   }
